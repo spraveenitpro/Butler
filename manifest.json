@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "Hello World Logger",
+    "version": "1.0",
+    "description": "Logs 'hello world' to the page console via a content script.",
+    "trial_tokens": [
+        "A3uAyq10O4NjyRlmgdHOZc9Ly7MlJgcp9PT0Llxmg3oZ2pMi1C3MZotgnj//xPYfyWH2Z/hcC390rABG4wVwaw8AAACCeyJvcmlnaW4iOiJjaHJvbWUtZXh0ZW5zaW9uOi8vZW5tbG5iYmloa2xrZG5oa2Rjb2NncGtmbnBscG1jZGsiLCJmZWF0dXJlIjoiQUlSZXdyaXRlckFQSSIsImV4cGlyeSI6MTc2OTQ3MjAwMCwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_title": "Run Butler Extension"
+    },
+    "permissions": ["activeTab", "scripting"]
+}
