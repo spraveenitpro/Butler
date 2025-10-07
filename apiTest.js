@@ -3,6 +3,18 @@ console.log('API Test page loaded')
 // Declare session variable in global scope so it can be accessed by both functions
 let session
 
+// Download the model
+
+async function downloadModel() {
+    session = await LanguageModel.create({
+        monitor(m) {
+            m.addEventListener('downloadprogress', e => {
+                console.log(`Download ${e.loaded * 100}%`)
+            })
+        },
+    })
+}
+
 async function testAvailability() {
     const availability = await LanguageModel.availability()
     console.log('LanguageModel availability:', availability)
@@ -13,6 +25,7 @@ testAvailability()
 
 async function createSession() {
     try {
+        const params = await LanguageModel.params()
         session = await LanguageModel.create({
             language: ['en'],
             initialPrompts: [
@@ -28,6 +41,8 @@ async function createSession() {
                     content: 'The official language of Italy is Italian. [...]',
                 },
             ],
+            temperature: Math.max(params.defaultTemperature * 1.2, 2.0),
+            topK: params.defaultTopK,
         })
         console.log('Session created:', session)
         return session
@@ -68,9 +83,10 @@ async function promptStreaming() {
 
 // Call the functions in sequence to ensure session is created before using it
 async function runTest() {
+    await downloadModel()
     await createSession()
     await createPrompt()
-    await promptStreaming()
+    //await promptStreaming()
     await session.destroy()
 }
 

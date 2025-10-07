@@ -1,100 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Butler Extension Test Page</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        line-height: 1.6;
-      }
-      .test-section {
-        margin: 30px 0;
-        padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-      }
-      textarea {
-        width: 100%;
-        min-height: 100px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-      }
-      .label {
-        font-weight: bold;
-        margin-bottom: 10px;
-        display: block;
-      }
-      .instructions {
-        background: #f0f8ff;
-        padding: 15px;
-        border-radius: 4px;
-        margin-bottom: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Butler Extension Test Page</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Butler Extension Test Page</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                line-height: 1.6;
+            }
+            .test-section {
+                margin: 30px 0;
+                padding: 20px;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+            }
+            textarea {
+                width: 100%;
+                min-height: 100px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+            }
+            .label {
+                font-weight: bold;
+                margin-bottom: 10px;
+                display: block;
+            }
+            .instructions {
+                background: #f0f8ff;
+                padding: 15px;
+                border-radius: 4px;
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Butler Extension Test Page</h1>
 
-    <div class="instructions">
-      <h3>Testing Instructions:</h3>
-      <ol>
-        <li>
-          Type some text in the textareas below (try negative or toxic content)
-        </li>
-        <li>Click the Butler extension button in your Chrome toolbar</li>
-        <li>Watch the text get rewritten to be more constructive!</li>
-        <li>Check the browser console (F12) for detailed logs</li>
-      </ol>
-    </div>
+        <div class="instructions">
+            <h3>Testing Instructions:</h3>
+            <ol>
+                <li>
+                    Type some text in the textareas below (try negative or toxic
+                    content)
+                </li>
+                <li>
+                    Click the Butler extension button in your Chrome toolbar
+                </li>
+                <li>Watch the text get rewritten to be more constructive!</li>
+                <li>Check the browser console (F12) for detailed logs</li>
+            </ol>
+        </div>
 
-    <div class="test-section">
-      <label class="label">Test 1: Comment Section</label>
-      <textarea placeholder="Try typing something negative or toxic here...">
+        <div class="test-section">
+            <label class="label">Test 1: Comment Section</label>
+            <textarea
+                placeholder="Try typing something negative or toxic here..."
+            >
 This prouct absolutely terrible the company should be  of themselves. What a waste of money!</textarea
-      >
-    </div>
+            >
+        </div>
 
-    <div class="test-section">
-      <label class="label">Test 2: Review Section</label>
-      <textarea placeholder="Write a harsh review...">
+        <div class="test-section">
+            <label class="label">Test 2: Review Section</label>
+            <textarea placeholder="Write a harsh review...">
 The serice was horrible, the staff was rude, and I'll never come back here again. This place is a joke!</textarea
-      >
-    </div>
+            >
+        </div>
 
-    <div class="test-section">
-      <label class="label">Test 3: Message Box</label>
-      <textarea placeholder="Write an angry message...">
+        <div class="test-section">
+            <label class="label">Test 3: Message Box</label>
+            <textarea placeholder="Write an angry message...">
 You're an idiot and your idea is stupid. This will never work and you're wasting everyone's time!</textarea
-      >
-    </div>
+            >
+        </div>
 
-    <div class="test-section">
-      <label class="label">Test 4: Empty Textarea (should be skipped)</label>
-      <textarea
-        placeholder="This should be skipped by the extension..."
-      ></textarea>
-    </div>
+        <div class="test-section">
+            <label class="label"
+                >Test 4: Empty Textarea (should be skipped)</label
+            >
+            <textarea
+                placeholder="This should be skipped by the extension..."
+            ></textarea>
+        </div>
 
-    <div class="test-section">
-      <label class="label">Test 5: Short Text (should be skipped)</label>
-      <textarea placeholder="Short text...">Bad!</textarea>
-    </div>
+        <div class="test-section">
+            <label class="label">Test 5: Short Text (should be skipped)</label>
+            <textarea placeholder="Short text...">Bad!</textarea>
+        </div>
 
-    <script>
-      // Add some helpful logging
-      console.log("Test page loaded. Ready for Butler extension testing!");
-      console.log(
-        "Found textareas:",
-        document.querySelectorAll("textarea").length
-      );
-    </script>
-  </body>
+        <script>
+            // Add some helpful logging
+            console.log('Test page loaded. Ready for Butler extension testing!')
+            console.log(
+                'Found textareas:',
+                document.querySelectorAll('textarea').length
+            )
+        </script>
+    </body>
 </html>
